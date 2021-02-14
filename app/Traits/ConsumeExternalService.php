@@ -6,7 +6,7 @@ trait ConsumeExternalService
 {
 
     /**
-     * Sen a request to any service
+     * Send a request to any service
      *
      * @return string
      */
