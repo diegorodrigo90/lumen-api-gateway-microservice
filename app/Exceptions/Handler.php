@@ -10,6 +10,9 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use GuzzleHttp\Exception\ClientException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\BadResponseException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -54,6 +57,11 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
 
+        if ($exception instanceof ClientException) {
+            $message = json_decode($exception->getResponse()->getBody(), true);
+            $code = $exception->getCode();
+            return $this->errorMessage($message, $code);
+        }
 
         if ($exception instanceof HttpException) {
             $code = $exception->getStatusCode();
@@ -80,11 +88,7 @@ class Handler extends ExceptionHandler
             $errors = $exception->validator->errors()->getMessages();
             return $this->errorResponse($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
         }
-        if ($exception instanceof ClientException) {
-            $message = $exception->getResponse->getBody();
-            $code = $exception->getCode();
-            return $this->errorResponse($message, $code);
-        }
+
 
         if (env('APP_DEBUG', false)) {
             return parent::render($request, $exception);
