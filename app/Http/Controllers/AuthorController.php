@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AuthorService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
     use ApiResponser;
+
+    /**
+     * The service to consume the authors microservice;
+     *
+     * @var AuthorService
+     */
+    public $authorService;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(AuthorService $authorService)
     {
-        //
+        $this->authorService = $authorService;
     }
 
     /**
@@ -25,8 +34,6 @@ class AuthorController extends Controller
      */
     public function index()
     {
-
-
     }
 
     /**
@@ -36,7 +43,6 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
     /**
@@ -46,7 +52,6 @@ class AuthorController extends Controller
      */
     public function show($authorId)
     {
-
     }
 
     /**
@@ -56,7 +61,6 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $authorId)
     {
-
     }
 
     /**
@@ -66,7 +70,5 @@ class AuthorController extends Controller
      */
     public function destroy($authorId)
     {
-
-
     }
 }
