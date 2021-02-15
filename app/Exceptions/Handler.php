@@ -10,9 +10,6 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use GuzzleHttp\Exception\ClientException;
-use Guzzle\Http\Exception\ClientErrorResponseException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Exception\BadResponseException;
 use Throwable;
 
 class Handler extends ExceptionHandler
