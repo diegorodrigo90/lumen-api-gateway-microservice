@@ -33,7 +33,7 @@ content-type: application/json
 {
     "name" : "Diego Rodrigo",
     "gender" : "male",
-    "country" : "Bradzil"
+    "country" : "Brazil"
 
 }
 
@@ -64,7 +64,7 @@ content-type: application/json
     "title" : "Title",
     "description" : "Description",
     "price" : "10",
-    "author_id": "124"
+    "author_id": "226565"
 }
 
 ###
