@@ -12,7 +12,7 @@ trait ConsumeExternalService
      *
      * @return string
      */
-    public function performRequest($method, $requestUrl, $formParams = [], $headers)
+    public function performRequest($method, $requestUrl, $formParams = [], $headers = [])
     {
         $client = new Client([
             'base_uri' => $this->baseUri,

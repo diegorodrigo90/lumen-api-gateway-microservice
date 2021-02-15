@@ -1,0 +1,88 @@
+
+# Get authors list
+GET http://127.0.0.1:8002/authors HTTP/1.1
+Accept: application/json
+
+
+###
+# Get especifc author
+GET http://localhost:8002/authors/55 HTTP/1.1
+Accept: application/json
+
+
+###
+# Add new author
+POST  http://localhost:8002/authors HTTP/1.1
+Accept: application/json
+content-type: application/json
+
+{
+    "name" : "Diego Rodrigo",
+    "gender" : "male",
+    "country" : "Brazil"
+
+}
+###
+
+###
+# Update an author
+PUT  http://localhost:8002/authors/9 HTTP/1.1
+Accept: application/json
+content-type: application/json
+
+{
+    "name" : "Diego Rodrigo",
+    "gender" : "male",
+    "country" : "Bradzil"
+
+}
+
+###
+# Delete an author
+DELETE  http://localhost:8002/authors/123 HTTP/1.1
+Accept: application/json
+
+###
+# Get books list
+GET http://127.0.0.1:8002/books HTTP/1.1
+Accept: application/json
+
+
+###
+# Get especifc book
+GET http://localhost:8002/books/55 HTTP/1.1
+Accept: application/json
+
+
+###
+# Add new book
+POST  http://localhost:8002/books HTTP/1.1
+Accept: application/json
+content-type: application/json
+
+{
+    "title" : "New title",
+    "description" : "New descriptiopn",
+    "price" : 10,
+    "author_id": 55
+
+}
+
+###
+# Update a book
+PUT  http://localhost:8002/books/9 HTTP/1.1
+Accept: application/json
+content-type: application/json
+
+{
+    "title" : "New title",
+    "description" : "New descriptiopn",
+    "price" : 10,
+    "author_id": 55
+
+}
+
+###
+# Delete a book
+DELETE  http://localhost:8002/books/55 HTTP/1.1
+Accept: application/json

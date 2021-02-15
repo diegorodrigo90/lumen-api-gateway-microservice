@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Services\BookService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class BookController extends Controller
      */
     public function index()
     {
-
+        return $this->successResponse($this->bookService->obtainBooks());
     }
 
     /**
@@ -42,7 +43,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-
+        return $this->successResponse($this->bookService->createBook($request->all(), Response::HTTP_CREATED));
     }
 
     /**
@@ -52,7 +53,7 @@ class BookController extends Controller
      */
     public function show($bookId)
     {
-
+        return $this->successResponse($this->bookService->obtainBook($bookId));
     }
 
     /**
@@ -62,7 +63,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $bookId)
     {
-
+        return $this->successResponse($this->bookService->editBook($request->all(), $bookId));
     }
 
     /**
@@ -72,6 +73,6 @@ class BookController extends Controller
      */
     public function destroy($bookId)
     {
-
+        return $this->successResponse($this->bookService->deleteBook($bookId));
     }
 }

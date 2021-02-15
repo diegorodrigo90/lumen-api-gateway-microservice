@@ -22,6 +22,60 @@ class BookService
      */
     public function __construct()
     {
-        $this->baseUri = config('services.books.base_uri');
+        $this->baseUri = config('app.books.base_uri');
+    }
+
+    /**
+     * Obtain the full list of author from the author service
+     *
+     * @return string
+     */
+    public function obtainBooks()
+    {
+        return $this->performRequest('GET', 'books');
+    }
+
+     /**
+     * Obtain specific author from the author service
+     *
+     * @return string
+     */
+    public function obtainBook($bookId)
+    {
+        return $this->performRequest('GET', "books/{$bookId}");
+    }
+
+
+    /**
+     * Create a new author from the author service
+     *
+     * @return string
+     */
+
+    public function createBook($data)
+    {
+        return $this->performRequest('POST', 'books', $data);
+    }
+
+    /**
+     * Update an author from the author service
+     *
+     * @return string
+     */
+
+    public function editBook($data, $bookId)
+    {
+        return $this->performRequest('PUT', "books/{$bookId}", $data);
+    }
+
+    /**
+     * Delete an author from the author service
+     *
+     * @return string
+     */
+
+    public function deleteBook($bookId)
+    {
+        return $this->performRequest('DELETE', "books/{$bookId}");
     }
 }
