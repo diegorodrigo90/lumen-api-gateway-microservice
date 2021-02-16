@@ -1,8 +1,22 @@
+# Get token access
+POST  http://127.0.0.1:8002/v1/oauth/token HTTP/1.1
+Accept: application/json
+content-type: application/json
 
+{
+    "grant_type": "client_credentials",
+    "client_id": 3,
+    "client_secret": "J3FNmgEooCruHDFczJ9ocdsJD86CGqHTYF3tKLJH",
+    "username": "bomibomi",
+    "password": "password",
+    "scope": ""
+}
+
+###
 # Get authors list
 GET http://127.0.0.1:8002/authors HTTP/1.1
 Accept: application/json
-
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZWNmZDk4OGQzZDc4YTFjYzJhZTQwOTc1ZmI4ODFmZTJjZGZjYjY4YzI1ZTMzZTlkNDQyZTg2YTNmNGE3Y2RkOTdiNzEyNThlNmQwZTU2N2EiLCJpYXQiOiIxNjEzNDM4NzY2Ljc4NDc1NyIsIm5iZiI6IjE2MTM0Mzg3NjYuNzg0NzYyIiwiZXhwIjoiMTY0NDk3NDc2Ni43NjA4MzEiLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.LxI_e41h_DISHyN9gjy-syrT33wjOhC-Qjhy4XJo1mJX_JZkdZyMdNHK-DpCKl4UU8a6vofUhqDLF3O6PlM163_H8jOaYGOg1onQGq-ocUTFdFXFgyLfdKTMluxMfFhqDl_F2RrMeheNqiHYK1kuuAU44N-8_9GaYmD8OR0UezSwNvts7f6kUdsF4kb30XOZ0x08CRRbgHCgUBCb_4EBdioj6q_LSrIyeU1tiyNZWGmRVQz-xt3wYcVE3PkUmvuzkcQb2Yt0yiQVZ4FJlEcbtZEsP74qOLi_kKNsAUPaFCQE3OBpbQtJRb2NN_Rq2FGpB7PyiA2kAx7ZFdR8Fe5v1sqPcQOT_hNtyWwQKbtN4N3_IgAsh65-IKH6zjKwnVcFi0LG_gFa3bU7vTg8vmVkqyAxeggQ8NzD1IQcEud47sa20UKgCiGsa_FOGrEdFno3qoKiHYU-2qOnyLJGbr2qD33P0j8mYYKwfqubwuFuRiszGyndfVh3OQ8BGbhLFFE8lXKvn4vcXcu9EGl-QX3OL-UC_BzCc9oEDbyx0mWgTN7mxFsdP449RvYuxDm37hkcFu64FTEZswo0uS8VWSnJwujDqtjvdQaL73XJFwIo8iJCqTekoZHrtcMtlTxDEO6uZ_kxpvCXPRuUWuoLYIKQFJ9rq4mF9WUyp0PdDSI-bsg
 
 ###
 # Get especifc author

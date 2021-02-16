@@ -6,6 +6,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Dusterio\LumenPassport\LumenPassport;
 
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**

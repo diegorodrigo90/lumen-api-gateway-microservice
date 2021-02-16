@@ -12,5 +12,7 @@ return [
     ],
     'books' => [
         'base_uri' => env('BOOKS_SERVICE_BASE_URL'),
-    ]
+    ],
+    'key' => env('APP_KEY'),
+    'cipher' => env('APP_CIPHER'),
 ];

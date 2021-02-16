@@ -15,6 +15,7 @@ return [
 
     'defaults' => [
         'guard' => env('AUTH_GUARD', 'api'),
+        'passwords' => 'users',
     ],
 
     /*
@@ -38,6 +39,7 @@ return [
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
+
         ],
     ],
 
@@ -62,6 +64,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+
         ]
     ],
 
