@@ -16,6 +16,13 @@ class BookService
     public $baseUri;
 
     /**
+     * The secret to consume the books service
+     *
+     * @var string
+     */
+    public $secret;
+
+    /**
      * Create a new event instance.
      *
      * @return void
@@ -23,6 +30,8 @@ class BookService
     public function __construct()
     {
         $this->baseUri = config('app.books.base_uri');
+        $this->secret = config('app.books.secret');
+
     }
 
     /**

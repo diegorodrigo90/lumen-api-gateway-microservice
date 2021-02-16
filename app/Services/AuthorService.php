@@ -16,6 +16,13 @@ class AuthorService
     public $baseUri;
 
     /**
+     * The secret to consume the authors service
+     *
+     * @var string
+     */
+    public $secret;
+
+    /**
      * Create a new event instance.
      *
      * @return void
@@ -23,6 +30,7 @@ class AuthorService
     public function __construct()
     {
         $this->baseUri = config('app.authors.base_uri');
+        $this->secret = config('app.authors.secret');
     }
 
     /**
