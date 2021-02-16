@@ -55,6 +55,8 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
 
+        //return $exception;
+
         if ($exception instanceof ClientException) {
             $message = json_decode($exception->getResponse()->getBody(), true);
             $code = $exception->getCode();
